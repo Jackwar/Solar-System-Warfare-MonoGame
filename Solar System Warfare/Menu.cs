@@ -12,6 +12,8 @@ namespace Solar_System_Warfare
         private const double ButtonTimerCooldown = 0.2;
         private double currentButtonTime;
         private bool buttonOnCooldown = false;
+        private const string MusicCredits = "Music Credits\n\"The Lift\" Kevin MacLeod(incompetech.com)\nLicensed under Creative Commons: By Attribution 3.0 License\nhttp://creativecommons.org/licenses/by/3.0/";
+        private Vector2 musicCreditsPosition = new Vector2(100, 200);
         public Button StartButton { get; set; }
         public Button BackButton { get; set; }
         public Button CreditsButton { get; set; }
@@ -77,6 +79,7 @@ namespace Solar_System_Warfare
             else
             {
                 spriteBatch.Draw(BackButton.Texture, StartButton.Position, Color.White);
+                spriteBatch.DrawString(Assets.Font, MusicCredits, musicCreditsPosition, Color.White);
             }
         }
     }
